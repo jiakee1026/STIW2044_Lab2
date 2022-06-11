@@ -28,4 +28,17 @@ class User {
     otp = json['otp'];
     credit = json['credit'];
   }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['email'] = email;
+    data['phone'] = phone;
+    data['address'] = address;
+    data['regdate'] = regdate;
+    data['otp'] = otp;
+    data['credit'] = credit;
+    return data;
+  }
 }

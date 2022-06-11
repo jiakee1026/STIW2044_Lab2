@@ -238,7 +238,7 @@ class _LoginPageState extends State<LoginPage> {
 
     String _email = _emailditingController.text;
     String _pass = _passEditingController.text;
-    http.post(Uri.parse(MyConfig.server + "/mypasar/php/login_user.php"),
+    http.post(Uri.parse(MyConfig.server + "/mytutor/php/login_user.php"),
         body: {"email": _email, "password": _pass}).then((response) {
       print(response.body);
       var jsondata = jsonDecode(response.body);

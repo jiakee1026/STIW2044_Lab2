@@ -1,20 +1,10 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:mytutor/view/tutorscreen.dart';
+import 'package:mytutor/model/user.dart';
 import 'package:mytutor/view/coursescreen.dart';
-import 'package:mytutor/view/subscribescreen.dart';
 import 'package:mytutor/view/favouritescreen.dart';
 import 'package:mytutor/view/profilescreen.dart';
-import 'package:mytutor/view/loginpage.dart';
-import 'package:mytutor/view/registerpage.dart';
-import 'package:sn_progress_dialog/sn_progress_dialog.dart';
-import 'package:mytutor/model/config.dart';
-import 'package:mytutor/model/user.dart';
-import '../model/tutor.dart';
-import '../model/course.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mytutor/view/subscribescreen.dart';
+import 'package:mytutor/view/tutorscreen.dart';
 
 class MainScreen extends StatefulWidget {
   final User user;
@@ -30,17 +20,18 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   late List<Widget> tabchildren;
   int _currentIndex = 0;
+
   String maintitle = "Profile";
 
   @override
   void initState() {
     super.initState();
     tabchildren = [
-      CourseScreen(user: widget.user),
-      TutorScreen(user: widget.user),
-      SubscribeScreen(),
-      FavouriteScreen(),
-      ProfileScreen(),
+      //CourseScreen(user: widget.user),
+      //TutorScreen(user: widget.user),
+      const SubscribeScreen(),
+      const FavouriteScreen(),
+      const ProfileScreen(),
     ];
   }
 
@@ -81,3 +72,15 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+      if (_currentIndex == 0) {}
+      if (_currentIndex == 1) {}
+      if (_currentIndex == 2) {}
+      if (_currentIndex == 3) {}
+      if (_currentIndex == 4) {}
+    });
+  }
+}

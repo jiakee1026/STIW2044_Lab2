@@ -251,8 +251,10 @@ class _LoginPageState extends State<LoginPage> {
             timeInSecForIosWeb: 1,
             fontSize: 14.0);
         progressDialog.dismiss();
-        Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) => MainPage()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => MainScreen(user: user)));
       } else {
         Fluttertoast.showToast(
             msg: "Login Failed",
